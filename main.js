@@ -168,7 +168,7 @@ const calculateRoundPoints = (
 
     let totalPoints = 0;
     // loop over the points div for the player(column) and add up all points
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i <= 10; i++) {
       const pointsDiv = document.getElementById(`points${i}-${columnNumber}`);
       const roundPoints = Number(pointsDiv.innerText);
 
