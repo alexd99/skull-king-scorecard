@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <title>Skull King Score Card</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="startingInformation">
+        <h1 id="title">Welcome to the Skull King Score Card</h1>
+        <p id="intro">
+          Before we get started lets get some information about who's playing
+        </p>
+
+        <form id="numberOfPlayersForm">
+          <label class="playerName">
+            Player 1:
+            <input type="text" />
+          </label>
+          <label class="playerName">
+            Player 2:
+            <input type="text" />
+          </label>
+          <label class="playerName">
+            Player 3:
+            <input type="text" />
+          </label>
+          <label class="playerName">
+            Player 4:
+            <input type="text" />
+          </label>
+          <label class="playerName">
+            Player 5:
+            <input type="text" />
+          </label>
+          <label class="playerName">
+            Player 6:
+            <input type="text" />
+          </label>
+
+          <div>
+            <button>Next</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="tablesContainer">
+        <table id="playerTable">
+          <thead id="playerTableHead"></thead>
+          <tbody id="playerTableBody"></tbody>
+        </table>
+
+        <table id="scoreTable">
+          <thead id="scoreTableHead"></thead>
+          <tbody id="scoreTableBody"></tbody>
+        </table>
+      </div>
+
+      <button id="resetButton" onclick="location.reload();">Reset</button>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
