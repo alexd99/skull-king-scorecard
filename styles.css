@@ -8,7 +8,11 @@
 }
 
 html {
-  background: url("./images/background.jpg") no-repeat bottom center fixed;
+  background-image: url("./images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  height: 100%;
 }
 body {
   margin: 0;
