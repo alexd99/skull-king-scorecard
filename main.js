@@ -229,7 +229,7 @@ form.addEventListener("submit", event => {
   }
 
   if (players.length < 2) {
-    window.alert("Please add at least on more player");
+    window.alert("Please add at least two players");
   } else {
     generatePlayerTable(players);
     generateScoreTable(playersForTable);
