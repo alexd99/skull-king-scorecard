@@ -130,6 +130,25 @@ const calculateRoundPoints = (
   const pointsDiv = document.getElementById(points);
   const totalPointsDiv = document.getElementById(total);
 
+  const calculateTotalPoints = () => {
+    let totalPoints = 0;
+    // loop over the points div for the player(column) and add up all points
+    for (let i = 1; i <= 10; i++) {
+      const pointsDiv = document.getElementById(`points${i}-${columnNumber}`);
+      const roundPoints = Number(pointsDiv.innerText);
+
+      totalPoints += roundPoints;
+    }
+
+    return totalPoints;
+  };
+
+  const populatePoints = points => {
+    pointsDiv.innerText = points;
+    totalPointsDiv.innerText = calculateTotalPoints();
+    calculatePlaces(players);
+  };
+
   if (tricksWanted && tricksWon && bonusPoints) {
     let points = 0;
 
@@ -164,18 +183,9 @@ const calculateRoundPoints = (
       }
     }
 
-    pointsDiv.innerText = points;
-
-    let totalPoints = 0;
-    // loop over the points div for the player(column) and add up all points
-    for (let i = 1; i <= 10; i++) {
-      const pointsDiv = document.getElementById(`points${i}-${columnNumber}`);
-      const roundPoints = Number(pointsDiv.innerText);
-
-      totalPoints += roundPoints;
-    }
-    totalPointsDiv.innerText = totalPoints;
-    calculatePlaces(players);
+    populatePoints(points);
+  } else {
+    populatePoints(0);
   }
 };
 
