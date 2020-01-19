@@ -162,7 +162,7 @@ const calculateRoundPoints = (
         // your point go up by the number of trick you wanted multiplied by 20
         points += tricksWon * 20;
       } else {
-        //if you want 0 tricks and get 0 trick your points gou up by 10 multiplied by the round number
+        //if you want 0 tricks and get 0 trick your points goes up by 10 multiplied by the round number
         points += 10 * roundNumber;
       }
 
