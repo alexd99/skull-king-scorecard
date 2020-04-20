@@ -47,10 +47,10 @@ const setUpPage = () => {
 };
 
 if (isDarkThemed === null) {
-  localStorage.setItem(
-    "isDarkThemed",
-    JSON.stringify(window.matchMedia("(prefers-color-scheme: dark)").matches)
-  );
+  const newTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  isDarkThemed = newTheme;
+  localStorage.setItem("isDarkThemed", JSON.stringify(newTheme));
 }
 
 toggleButton.addEventListener("click", () => {
