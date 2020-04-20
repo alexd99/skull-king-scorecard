@@ -1,0 +1,34 @@
+:root {
+  --background: #ffffff;
+  --text: #111111;
+  --input-border: #eeeeee;
+  --table-border: #333333;
+}
+
+table {
+  background: var(--background);
+  color: var(--text);
+}
+table td,
+th {
+  border: 1px solid var(--table-border);
+}
+
+.playerName > input {
+  background-color: var(--background);
+  color: var(--text);
+  border: 1px inset var(--input-border);
+}
+.tableInput {
+  background-color: var(--background);
+  color: var(--text);
+  border: 1px inset var(--input-border);
+}
+.points {
+  color: var(--text);
+}
+
+#themeToggle {
+  color: var(--text);
+  background-color: var(--background);
+}

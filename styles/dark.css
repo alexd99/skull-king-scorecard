@@ -1,0 +1,38 @@
+:root {
+  --background: #282c35;
+  --input-background: #393f44;
+  --text: #ffffff;
+  --input-border: #85888c;
+  --table-border: #cccccc;
+}
+::placeholder {
+  color: #cbcbcb;
+}
+
+table {
+  background: var(--background);
+  color: var(--text);
+}
+table td,
+th {
+  border: 1px solid var(--table-border);
+}
+
+.playerName > input {
+  background-color: var(--input-background);
+  color: var(--text);
+  border: 1px inset var(--input-border);
+}
+.tableInput {
+  background-color: var(--input-background);
+  color: var(--text);
+  border: 1px inset var(--input-border);
+}
+.points {
+  color: var(--text);
+}
+
+#themeToggle {
+  color: var(--text);
+  background-color: var(--background);
+}
