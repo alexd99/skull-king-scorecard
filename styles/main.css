@@ -109,6 +109,7 @@ button {
   flex-wrap: wrap;
   overflow-x: scroll;
   overflow-y: hidden;
+  padding-block-end: 1px;
 }
 #resetButton {
   display: none;
