@@ -1,5 +1,6 @@
 :root {
   --background: #ffffff;
+  --input-background: #f9f9f9;
   --input-error-color: #ec0000;
   --text: #111111;
   --input-border: #eeeeee;
@@ -16,12 +17,12 @@ th {
 }
 
 .playerName > input {
-  background-color: var(--background);
+  background-color: var(--input-background);
   color: var(--text);
   border: 1px inset var(--input-border);
 }
 .tableInput {
-  background-color: var(--background);
+  background-color: var(--input-background);
   color: var(--text);
   border: 1px inset var(--input-border);
 }
