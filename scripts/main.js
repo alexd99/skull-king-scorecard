@@ -1,4 +1,4 @@
-const generatePlayerTable = players => {
+const generatePlayerTable = (players) => {
   form.style.display = "none";
   document.getElementById("intro").style.display = "none";
 
@@ -91,7 +91,7 @@ const generatePlayerTable = players => {
   }
 };
 
-const generateScoreTable = players => {
+const generateScoreTable = (players) => {
   const scoreTableHeader = document.getElementById("scoreTableHead");
 
   scoreTableHeader.innerHTML = `
@@ -143,7 +143,7 @@ const calculateRoundPoints = (
     return totalPoints;
   };
 
-  const populatePoints = points => {
+  const populatePoints = (points) => {
     pointsDiv.innerText = points;
     totalPointsDiv.innerText = calculateTotalPoints();
     calculatePlaces(players);
@@ -193,7 +193,7 @@ const calculateRoundPoints = (
   }
 };
 
-const calculatePlaces = players => {
+const calculatePlaces = (players) => {
   let playerTotals = [];
 
   for (let i = 0; i < players.length; i++) {
@@ -228,7 +228,7 @@ const calculatePlaces = players => {
 };
 
 const form = document.getElementById("numberOfPlayersForm");
-form.addEventListener("submit", event => {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   let players = [];
