@@ -40,8 +40,6 @@ const toggleButton = document.getElementById("themeToggle");
 const stylesheet = document.getElementById("themeStylesheet");
 let isDarkThemed = JSON.parse(localStorage.getItem("isDarkThemed"));
 
-console.log(stylesheet.href);
-
 const setUpPage = () => {
   toggleButton.innerHTML = isDarkThemed ? sunSVG : moonSVG;
 };
