@@ -1,6 +1,7 @@
 :root {
   --background: #282c35;
   --input-background: #393f44;
+  --input-error-color: #ff0000;
   --text: #ffffff;
   --input-border: #85888c;
   --table-border: #cccccc;
@@ -27,6 +28,9 @@ th {
   background-color: var(--input-background);
   color: var(--text);
   border: 1px inset var(--input-border);
+}
+.tableInput.error {
+  border: 1px solid var(--input-error-color);
 }
 .points {
   color: var(--text);

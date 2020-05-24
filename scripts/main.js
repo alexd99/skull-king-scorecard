@@ -59,6 +59,18 @@ const generatePlayerTable = (players) => {
               players
             )
           );
+          input.addEventListener("blur", (event) => {
+            const blurredInput = event.target;
+
+            // check if the input's value contains any characters besides numbers(0-9)
+            if (!/^\d+$/.test(blurredInput.value)) {
+              blurredInput.classList.add("error");
+              blurredInput.title = "Please enter a number";
+            } else {
+              blurredInput.className = "tableInput";
+              blurredInput.title = "";
+            }
+          });
 
           switch (k) {
             case 0:
