@@ -62,8 +62,8 @@ const generatePlayerTable = (players) => {
           input.addEventListener("blur", (event) => {
             const blurredInput = event.target;
 
-            // check if the input's value contains any characters besides numbers(0-9)
-            if (!/^\d+$/.test(blurredInput.value)) {
+            // check if the input's value contains any characters besides numbers
+            if (!/^[0-9-]+$/.test(blurredInput.value)) {
               blurredInput.classList.add("error");
               blurredInput.title = "Please enter a number";
             } else {
@@ -196,6 +196,12 @@ const calculateRoundPoints = (
       } else {
         //if you want 0 tricks and don't get 0 tricks your score goes down by10 multiplied by the round number
         points -= 10 * roundNumber;
+      }
+
+      // There are cases when negative bonus points are given when a player does not get their bid.
+      // This will only allow negative points to be added though.
+      if (Math.sign(bonusPoints) === -1) {
+        points += bonusPoints;
       }
     }
 
