@@ -115,7 +115,7 @@ const generateScoreTable = (players) => {
   const scoreTableBody = document.getElementById("scoreTableBody");
   scoreTableBody.innerHTML = "";
   // generate a score row for every player
-  players.forEach((player, index) => {
+  players.forEach((player) => {
     const scoreRow = document.createElement("tr");
     scoreRow.innerHTML = `
       <td>${player.place}</td>
