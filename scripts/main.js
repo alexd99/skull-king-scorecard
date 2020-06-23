@@ -161,7 +161,7 @@ const calculateRoundPoints = (
     calculatePlaces(players);
   };
 
-  if (tricksWanted && Number(tricksWanted) === 0) {
+  if (tricksWanted && Number(tricksWanted) === 0 && !bonusPoints) {
     document.getElementById(bonus).value = 0;
   }
 
