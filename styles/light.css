@@ -1,19 +1,9 @@
 :root {
+  --text: #111111;
   --background: #ffffff;
   --input-background: #f9f9f9;
-  --input-error-color: #ec0000;
-  --text: #111111;
-  --input-border: #eeeeee;
-  --table-border: #333333;
-}
-
-table {
-  background: var(--background);
-  color: var(--text);
-}
-table td,
-th {
-  border: 1px solid var(--table-border);
+  --input-border: #7a7773;
+  --progress-color: #a3d287;
 }
 
 .playerName > input {
@@ -21,18 +11,27 @@ th {
   color: var(--text);
   border: 1px inset var(--input-border);
 }
-.tableInput {
+.scoreInput input {
   background-color: var(--input-background);
   color: var(--text);
   border: 1px inset var(--input-border);
 }
-.tableInput.error {
-  border: 1px solid var(--input-error-color);
+
+#progressBar li.finished::before {
+  background: var(--progress-color);
+  border-color: var(--progress-color);
 }
-.points {
+#progressBar li.finished::after {
+  background: var(--progress-color);
+}
+#progressBar li:before {
+  border: 2px solid var(--input-border);
+  background: var(--background);
   color: var(--text);
 }
-
+#mobileProgressBar {
+  background: var(--progress-color);
+}
 #themeToggle {
   color: var(--text);
   background-color: var(--background);

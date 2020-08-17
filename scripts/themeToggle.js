@@ -5,7 +5,6 @@ const sunSVG = `<svg
     viewBox="0 0 24 24"
     stroke-linecap="round"
     stroke-linejoin="round"
-    class="css-bcim1s e1uyvfv1"
     height="2rem"
     width="2rem"
     xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +27,6 @@ stroke-width="2"
 viewBox="0 0 24 24"
 stroke-linecap="round"
 stroke-linejoin="round"
-class="css-bcim1s e1uyvfv0"
 height="2rem"
 width="2rem"
 xmlns="http://www.w3.org/2000/svg"
@@ -38,27 +36,30 @@ xmlns="http://www.w3.org/2000/svg"
 </svg>`;
 const toggleButton = document.getElementById("themeToggle");
 const stylesheet = document.getElementById("themeStylesheet");
-let isDarkThemed = JSON.parse(localStorage.getItem("isDarkThemed"));
 
-const setUpPage = () => {
-  toggleButton.innerHTML = isDarkThemed ? sunSVG : moonSVG;
+const handleThemeChange = (newTheme) => {
+  toggleButton.innerHTML = newTheme === "dark" ? sunSVG : moonSVG;
+
+  stylesheet.href = `./styles/${newTheme === "dark" ? "dark" : "light"}.css`;
+  localStorage.setItem("currentTheme", newTheme);
+};
+const getCurrentTheme = () => {
+  return localStorage.getItem("currentTheme");
 };
 
-if (isDarkThemed === null) {
-  const newTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-  isDarkThemed = newTheme;
-  localStorage.setItem("isDarkThemed", JSON.stringify(newTheme));
+if (getCurrentTheme() === null) {
+  localStorage.setItem(
+    "currentTheme",
+    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+  );
 }
 
 toggleButton.addEventListener("click", () => {
-  const newTheme = !isDarkThemed;
-  isDarkThemed = newTheme;
-
-  setUpPage();
-
-  stylesheet.href = `./styles/${isDarkThemed ? "dark" : "light"}.css`;
-  localStorage.setItem("isDarkThemed", JSON.stringify(newTheme));
+  handleThemeChange(getCurrentTheme() === "light" ? "dark" : "light");
 });
 
-setUpPage();
+window.matchMedia("(prefers-color-scheme: dark)").addListener((event) => {
+  handleThemeChange(event.matches ? "dark" : "light");
+});
+
+handleThemeChange(getCurrentTheme());

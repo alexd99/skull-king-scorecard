@@ -14,12 +14,28 @@ body {
   margin: 0;
   width: 100%;
   color: #fff;
-  font-family: Open Sans;
+  font-family: Open Sans, sans-serif;
+}
+h2,
+h3,
+p,
+li,
+span,
+label {
+  color: #ffffff;
+  text-shadow: #000000 1px 0 0, #000000 1px 1px 0, #000000 1px -1px 0px,
+    #000000 -1px 1px 0px, #000000 -1px 0px 0px, #000000 -1px -1px 0px,
+    #000000 0px 1px 0px, #000000 0px -1px 0px;
+}
+h3 {
+  margin: 1rem auto;
+}
+input {
+  border-radius: 4px;
 }
 p,
 label {
-  font-size: 1.25rem;
-  color: #000;
+  font-size: 1rem;
 }
 input[type="number"] {
   -moz-appearance: textfield;
@@ -28,13 +44,6 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-table {
-  border-collapse: collapse;
-}
-table td,
-table th {
-  padding: 0.25rem;
 }
 button {
   margin-block-start: 1rem;
@@ -48,33 +57,57 @@ button {
   font-family: pieces-of-eight;
 }
 
-.points {
-  font-size: 1.25rem;
-}
-.playerName {
+.playerName > input {
   display: flex;
   flex-direction: column;
-  max-width: 31.25rem;
-  margin-block-start: 1rem;
-  text-shadow: #000000 1px 0 0, #000000 1px 1px 0, #000000 1px -1px 0px,
-    #000000 -1px 1px 0px, #000000 -1px 0px 0px, #000000 -1px -1px 0px,
-    #000000 0px 1px 0px, #000000 0px -1px 0px;
-  color: #fff;
-}
-.playerName > input {
   font-size: 1rem;
   padding-left: 0.5rem;
+  width: 16rem;
 }
-.tableInput {
-  max-width: 5.5rem;
-  font-size: 0.875rem;
-  margin: 0 1px;
-}
-.tableText {
+.playerName {
   font-size: 1.25rem;
+  margin-block-start: 1rem;
 }
-.tableScrollWrapper {
-  overflow-x: scroll;
+.scoreInput {
+  margin-block-end: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.scoreInput label {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+}
+.scoreInput input {
+  max-width: 4rem;
+  padding: 0.1rem 0 0.1rem 0.25rem;
+  margin: 0 0 0 1rem;
+  font-size: 1rem;
+}
+.roundScore,
+.finalScoreBoardScore {
+  display: flex;
+  justify-content: space-between;
+}
+.roundScore {
+  margin-block-end: 0.5rem;
+}
+.finalScoreBoardScore {
+  margin-block-end: 1rem;
+  font-size: 1.25rem;
+  max-width: 500px;
+  margin: 1rem auto;
+  width: 100%;
+}
+.roundNavigationButton {
+  font-family: Cambria Math, sans-serif;
+  font-size: 1.875rem;
+  padding: 0 0.75rem;
+  margin: 0;
+}
+.roundNavigationButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
 }
 
 #container {
@@ -88,37 +121,6 @@ button {
 #intro {
   font-family: pieces-of-eight, cursive;
   font-size: 1.75rem;
-  text-shadow: #000000 1px 0 0, #000000 1px 1px 0, #000000 1px -1px 0px,
-    #000000 -1px 1px 0px, #000000 -1px 0px 0px, #000000 -1px -1px 0px,
-    #000000 0px 1px 0px, #000000 0px -1px 0px;
-  color: #fff;
-}
-#numberOfPlayersForm {
-  display: flex;
-  flex-direction: column;
-}
-#numberOfPlayers {
-  border-radius: 2px;
-  font-size: 1rem;
-  padding: 0.25rem;
-  border: 1px solid black;
-}
-#trickInfo {
-  display: flex;
-  margin-block-end: 0.25rem;
-}
-#tablesContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  overflow: hidden;
-  padding-block-end: 1px;
-}
-#resetButton {
-  display: none;
-}
-#playerTable {
-  margin: 0 0.5rem 0.5rem 0;
 }
 #titleBox {
   display: flex;
@@ -135,4 +137,146 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#playersForm {
+  display: flex;
+  flex-direction: column;
+}
+#progressBarSelect {
+  color: #ffffff;
+}
+#progressBarSelect {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  margin: auto 1rem;
+}
+#mobileProgressBar {
+  margin-block-start: 0.5rem;
+  height: 5px;
+  border-radius: 100px;
+}
+#roundForm {
+  display: flex;
+  flex-direction: column;
+}
+#roundInputsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(192px, 1fr));
+  grid-gap: 1rem;
+}
+#roundInputsContainer h3 {
+  text-align: center;
+}
+#roundScoreBoardTitle {
+  text-align: center;
+}
+#roundScoreBoard {
+  font-size: 1.25rem;
+  max-width: 500px;
+}
+#formTitleBox {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0.75rem auto;
+}
+#formTitleBox > div:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#roundIndicator {
+  margin: auto 1rem;
+}
+#roundIndicator > h2 {
+  margin: 0;
+}
+#roundIndicator > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#finalScoreBoard {
+  margin: auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#finalScoreboardSelect {
+  display: inline-flex;
+  flex-direction: column;
+}
+#finalScoreboardSelect select {
+  margin: 0;
+}
+
+/* ---------- progress stepper ---------- */
+#progressBarContainer {
+  width: 100%;
+  display: none;
+}
+#progressBar {
+  counter-reset: step;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0;
+}
+#progressBar li {
+  float: left;
+  width: 20%;
+  position: relative;
+  text-align: center;
+  list-style: none;
+}
+#progressBar li:before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: none;
+  content: counter(step);
+  counter-increment: step;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #bebebe;
+  margin: 0 auto auto auto;
+  border-radius: 50%;
+  line-height: 27px;
+  background: #eeeeee;
+  color: #111111;
+  text-align: center;
+  font-weight: bold;
+}
+#progressBar li#finalScore:before {
+  content: "F";
+}
+#progressBar li:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #979797;
+  top: 15px;
+  left: -50%;
+  z-index: -1;
+  cursor: auto;
+}
+#progressBar li:first-child:after {
+  content: none;
+}
+
+@media screen and (max-width: 400px) {
+  .scoreInputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scoreInput label {
+    text-align: left;
+  }
 }

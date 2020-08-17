@@ -1,22 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-156382213-1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "UA-156382213-1");
-    </script>
-
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
@@ -43,69 +28,45 @@
   </head>
   <body>
     <div id="container">
-      <div id="startingInformation">
-        <div id="titleBox">
-          <h1 id="title">Welcome to the Skull King Scorecard</h1>
+      <div id="titleBox">
+        <h1 id="title">Welcome to the Skull King Scorecard</h1>
 
-          <button id="themeToggle"></button>
-        </div>
-
-        <p id="intro">
-          Before we get started let's get some information about who's playing
-        </p>
-
-        <form id="numberOfPlayersForm">
-          <label class="playerName">
-            Player 1:
-            <input type="text" />
-          </label>
-          <label class="playerName">
-            Player 2:
-            <input type="text" />
-          </label>
-          <label class="playerName">
-            Player 3:
-            <input type="text" />
-          </label>
-          <label class="playerName">
-            Player 4:
-            <input type="text" />
-          </label>
-          <label class="playerName">
-            Player 5:
-            <input type="text" />
-          </label>
-          <label class="playerName">
-            Player 6:
-            <input type="text" />
-          </label>
-
-          <div>
-            <button>Next</button>
-          </div>
-        </form>
+        <button id="themeToggle"></button>
       </div>
 
-      <div id="tablesContainer">
-        <div class="tableScrollWrapper">
-          <table id="playerTable">
-            <thead id="playerTableHead"></thead>
-            <tbody id="playerTableBody"></tbody>
-          </table>
-        </div>
+      <p id="intro">
+        Ahoy, mateys, 'n welcome t' th' skull king scorecard. Afore we get
+        started let's figure out who will cap'n which ship.
+      </p>
 
-        <div class="tableScrollWrapper">
-          <table id="scoreTable">
-            <thead id="scoreTableHead"></thead>
-            <tbody id="scoreTableBody"></tbody>
-          </table>
+      <form id="playersForm">
+        <div id="startGameContainer">
+          <button id="startGame">Set Sail</button>
         </div>
+      </form>
+
+      <div id="progressBarContainer">
+        <ul id="progressBar">
+          <li id="step1">Round 1</li>
+          <li id="step2">Round 2</li>
+          <li id="step3">Round 3</li>
+          <li id="step4">Round 4</li>
+          <li id="step5">Round 5</li>
+          <li id="step6">Round 6</li>
+          <li id="step7">Round 7</li>
+          <li id="step8">Round 8</li>
+          <li id="step9">Round 9</li>
+          <li id="step10">Round 10</li>
+          <li id="finalScore">Final Scores</li>
+        </ul>
       </div>
 
-      <button id="resetButton" onclick="location.reload();">Reset</button>
+      <div id="roundFormContainer"></div>
+      <div id="finalScoreContainer"></div>
     </div>
 
     <script src="./scripts/themeToggle.js"></script>
-    <script src="./scripts/main.js"></script>
+    <script src="./scripts/generatorPlayersForm.js"></script>
+    <script src="./scripts/scoreCard/index.js" type="module"></script>
   </body>
 </html>
