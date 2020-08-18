@@ -5,8 +5,7 @@ const sunSVG = `<svg
     viewBox="0 0 24 24"
     stroke-linecap="round"
     stroke-linejoin="round"
-    height="2rem"
-    width="2rem"
+    style="height: 2rem; width: 2rem;"
     xmlns="http://www.w3.org/2000/svg"
   >
     <title>Switch to light mode</title>
@@ -27,8 +26,7 @@ stroke-width="2"
 viewBox="0 0 24 24"
 stroke-linecap="round"
 stroke-linejoin="round"
-height="2rem"
-width="2rem"
+style="height: 2rem; width: 2rem;"
 xmlns="http://www.w3.org/2000/svg"
 >
 <title>Switch to dark mode</title>
