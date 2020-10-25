@@ -30,11 +30,11 @@
     />
 
     <script>
-      const darkThemed = JSON.parse(localStorage.getItem("isDarkThemed"));
+      const currentTheme = localStorage.getItem("currentTheme");
 
-      if (darkThemed !== null) {
+      if (currentTheme !== null) {
         document.getElementById("themeStylesheet").href = `./styles/${
-          darkThemed ? "dark" : "light"
+          currentTheme === "dark" ? "dark" : "light"
         }.css`;
       }
     </script>
