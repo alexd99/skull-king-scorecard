@@ -6,6 +6,17 @@ const { getCurrentPlayers } = playersTracker();
 const { getCurrentStep } = stepTracker();
 const { lookUpRound } = scoreTracker();
 
+const setBonusToZero = (player) => {
+  const bonusInput = document.getElementById(
+    `${player}-Bonus_${getCurrentStep()}`
+  );
+
+  // if a value is already set don't override it
+  if (!bonusInput.value) {
+    bonusInput.value = "0";
+  }
+};
+
 const generatePlayerInputs = () => {
   let inputs = new DocumentFragment();
 
@@ -45,14 +56,18 @@ const generatePlayerInputs = () => {
         input.addEventListener("blur", (event) => {
           // the majority of the time when a player bids zero they can not earn any bonus points
           if (event.target.value === "0") {
-            const bonusInput = document.getElementById(
-              `${player}-Bonus_${getCurrentStep()}`
-            );
-
-            // if a value is already set don't override it
-            if (!bonusInput.value) {
-              bonusInput.value = "0";
-            }
+            setBonusToZero(player);
+          }
+        });
+      }
+      if (type === "Won") {
+        input.addEventListener("blur", (event) => {
+          const wantedValue = document.getElementById(
+            `${player}-Wanted_${getCurrentStep()}`
+          ).value;
+          // players who didn't get their bet don't bonus points, so set bonus to 0
+          if (wantedValue != event.target.value && event.target.value > 0) {
+            setBonusToZero(player);
           }
         });
       }
