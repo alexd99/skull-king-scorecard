@@ -65,8 +65,8 @@ const generatePlayerInputs = () => {
           const wantedValue = document.getElementById(
             `${player}-Wanted_${getCurrentStep()}`
           ).value;
-          // players who didn't get their bet don't bonus points, so set bonus to 0
-          if (wantedValue != event.target.value && event.target.value > 0) {
+          // players who didn't get their bid don't get bonus points. So set bonus points to 0.
+          if (wantedValue !== event.target.value && event.target.value > 0) {
             setBonusToZero(player);
           }
         });
